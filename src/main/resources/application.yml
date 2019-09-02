@@ -4,3 +4,5 @@ spring:
     url: jdbc:mybatis://39.108.141.221:3306/poesy?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=GMT
     name: db
     password: 123456
+  resources:
+    static-locations: classpath:/templates/,classpath:/static/

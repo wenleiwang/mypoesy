@@ -1,0 +1,38 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Microsoft YaHei";
+}
+
+body{
+    background-color: #4A4A4A;
+}
+li{
+    list-style: none;
+}
+
+.bg-green{
+    background-color: #78B13C;
+}
+.bg-orange{
+    background-color: #E3853D;
+}
+.bg-yellow{
+    background-color: #D1BB44;
+}
+.bg-red{
+    background-color: #E45A48;
+}
+
+.bg-green-bright {
+    background-color: #5CB85C;
+}
+.bg-orange-bright {
+    background-color: #F0AD4E;
+}
+.bg-yellow-bright {
+    background-color: #F4EA2A;
+}
+.bg-red-bright {
+    background-color: #D9534F;
+}

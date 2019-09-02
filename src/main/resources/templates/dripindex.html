@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+<!--    惊了！没有使用rel竟然css样式不能使用-->
+    <link rel="stylesheet" type="text/css" href="css/drip.css"/>
+    <link rel="stylesheet" type="text/css" href="css/editormd.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+
+    <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<!--    导入makedown插件-->
+    <script src="js/editormd.js" type="text/javascript" charset="utf-8"></script>
+<!--    导入日历生成函数-->
+    <script src="js/calendarUtil.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        //makedown插件开启
+        $(function() {
+            editormd("my-editormd", { //注意1：这里的就是上面的DIV的id属性值
+                width: "80%",
+                height: 600,
+                syncScrolling: "single",
+                path: "lib/", //注意2：你的路径
+                saveHTMLToTextarea: true //注意3：这个配置，方便post提交表单
+
+            });
+        });
+        $(document).ready(function () {
+            //日历弹窗回收
+            $(".monthScenery").click(function(e){
+                $(this).hide(500);
+            });
+
+            //日历弹窗弹出
+            $("header").click(function(){
+                $(".monthScenery").show(500);
+            });
+
+            //头像功能弹窗
+            $(".userHeadImageUl").hover(function () {
+                $(".loginInfoMenu").css("display","block");
+            },function () {
+                $(".loginInfoMenu").css("display","none");
+            });
+
+            //长期日历进度条弹窗
+            var PopupList = $(".PopupList");
+            $(".dayTable > tbody > tr > td > ul > li").hover(function () {
+                PopupList.css({
+                    "top":event.clientY,
+                    "left":event.clientX,
+                    "z-index":"21",
+                    "display":"block"
+                });
+            },function () {
+                PopupList.css({
+                    "display":"none"
+                });
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+<header>
+<!--    logo start-->
+<div   id="m" class="PopupList"   style="position:absolute;top:0;left:0;display:none;padding:3px;border:1px solid #528AC6;background-color:#ffdfd0;" >
+　　<b>点滴,点滴平凡汇聚人生!</b>
+</div>
+    <div>
+        <img src="pic/logo.png" alt="点滴" height="50px" width="70px">
+    </div>
+<!--    logo end-->
+<!--    导航-->
+    <div>
+
+    </div>
+<!--    导航end-->
+<!--    用户-->
+    <div>
+
+    </div>
+<!--    用户end-->
+</header>
+<!--这个背景图片-->
+<div class="monthScenery" style="display: none">
+<!--    <img src="pic/324819.jpg" alt="beijign">-->
+    <table class="dayTable" onClick="event.cancelBubble = true">
+        <thead>
+            <tr>
+                <td colspan="8">
+                <div class="menu clearfix">
+                    <div class="select fl pr">
+                      <ul class="select-list select-year pa none">
+                          <li value="2015">2015年</li>
+                          <li value="2016">2016年</li>
+                          <li value="2017">2017年</li>
+                      </ul>
+                      <div class="select-text year"><span class="year-text" value="2016">2016年</span>▼</div>
+                    </div>
+                    <a class="select-prev fl" href="javascript:;">&lt;</a>
+                        <div class="select month fl pr">
+                            <ul class="select-list pa none">
+                              <li value="1">1月</li>
+                              <li value="2">2月</li>
+                              <li value="3">3月</li>
+                              <li value="4">4月</li>
+                              <li value="5">5月</li>
+                              <li value="6">6月</li>
+                              <li value="7">7月</li>
+                              <li value="8">8月</li>
+                              <li value="9">9月</li>
+                              <li value="10">10月</li>
+                              <li value="11">11月</li>
+                              <li value="12">12月</li>
+                            </ul>
+                          <div class="select-text"><span class="month-text" value="1">1月</span>▼</div>
+                        </div>
+                    <a class="select-next fl" href="javascript:;">&gt;</a>
+                    <a class="select-today fl" href="javascript:;">返回今天</a>
+                    <div class="time fl">10:40:05</div>
+                </div>
+                </td>
+            </tr>
+            <tr style="text-align: center">
+                <td>日</td>
+                <td>一</td>
+                <td>二</td>
+                <td>三</td>
+                <td>四</td>
+                <td>五</td>
+                <td>六</td>
+                <td>备注</td>
+            </tr>
+        </thead>
+        <tbody class="table">
+            <tr>
+                <td class="everyDayTable">
+                    <div class="day01"></div>
+                    <ul>
+                        <li class="chi"></li>
+                        <li class="cheng"></li>
+                        <li class="huang"></li>
+                        <li class="lu"></li>
+                        <li class="qing"></li>
+                        <li class="lan"></li>
+                        <li class="zi"></li>
+                    </ul>
+                </td>
+                <td class="everyDayTable">
+                    <div class="day02"></div>
+                    <ul>
+                        <li class="chi"></li>
+                        <li class="cheng"></li>
+                        <li class="huang"></li>
+                        <li class="lu"></li>
+                        <li class="qing"></li>
+                        <li class="lan"></li>
+                        <li class="zi"></li>
+                    </ul>
+                </td>
+                <td class="everyDayTable">
+                    <div class="day03"></div>
+                    <ul>
+                        <li class="chi"></li>
+                        <li class="cheng"></li>
+                        <li class="huang"></li>
+                        <li class="lu"></li>
+                        <li class="qing"></li>
+                        <li class="lan"></li>
+                        <li class="zi"></li>
+                    </ul>
+                </td>
+                <td class="everyDayTable">
+                    <div class="day04"></div>
+                    <ul>
+                        <li class="chi"></li>
+                        <li class="cheng"></li>
+                        <li class="huang"></li>
+                        <li class="lu"></li>
+                        <li class="qing"></li>
+                        <li class="lan"></li>
+                        <li class="zi"></li>
+                    </ul>
+                </td>
+                <td class="everyDayTable">
+                    <div class="day05"></div>
+                    <ul>
+                        <li class="chi"></li>
+                        <li class="cheng"></li>
+                        <li class="huang"></li>
+                        <li class="lu"></li>
+                        <li class="qing"></li>
+                        <li class="lan"></li>
+                        <li class="zi"></li>
+                    </ul>
+                </td>
+                <td class="everyDayTable">
+                    <div class="day06"></div>
+                    <ul>
+                        <li class="chi"></li>
+                        <li class="cheng"></li>
+                        <li class="huang"></li>
+                        <li class="lu"></li>
+                        <li class="qing"></li>
+                        <li class="lan"></li>
+                        <li class="zi"></li>
+                    </ul>
+                </td>
+                <td class="everyDayTable">
+                    <div class="day07"></div>
+                    <ul>
+                        <li class="chi"></li>
+                        <li class="cheng"></li>
+                        <li class="huang"></li>
+                        <li class="lu"></li>
+                        <li class="qing"></li>
+                        <li class="lan"></li>
+                        <li class="zi"></li>
+                    </ul>
+                </td>
+                <td rowspan="5" class="LineFore"></td>
+            </tr>
+
+            <tr>
+                    <td class="everyDayTable">
+                        <div class="day08"></div>
+                        <ul>
+                            <li class="chi"></li>
+                            <li class="cheng"></li>
+                            <li class="huang"></li>
+                            <li class="lu"></li>
+                            <li class="qing"></li>
+                            <li class="lan"></li>
+                            <li class="zi"></li>
+                        </ul>
+                    </td>
+                    <td class="everyDayTable">
+                        <div class="day09"></div>
+                        <ul>
+                            <li class="chi"></li>
+                            <li class="cheng"></li>
+                            <li class="huang"></li>
+                            <li class="lu"></li>
+                            <li class="qing"></li>
+                            <li class="lan"></li>
+                            <li class="zi"></li>
+                        </ul>
+                    </td>
+                    <td class="everyDayTable">
+                        <div class="day10"></div>
+                        <ul>
+                            <li class="chi"></li>
+                            <li class="cheng"></li>
+                            <li class="huang"></li>
+                            <li class="lu"></li>
+                            <li class="qing"></li>
+                            <li class="lan"></li>
+                            <li class="zi"></li>
+                        </ul>
+                    </td>
+                    <td class="everyDayTable">
+                        <div class="day11"></div>
+                        <ul>
+                            <li class="chi"></li>
+                            <li class="cheng"></li>
+                            <li class="huang"></li>
+                            <li class="lu"></li>
+                            <li class="qing"></li>
+                            <li class="lan"></li>
+                            <li class="zi"></li>
+                        </ul>
+                    </td>
+                    <td class="everyDayTable">
+                        <div class="day12"></div>
+                        <ul>
+                            <li class="chi"></li>
+                            <li class="cheng"></li>
+                            <li class="huang"></li>
+                            <li class="lu"></li>
+                            <li class="qing"></li>
+                            <li class="lan"></li>
+                            <li class="zi"></li>
+                        </ul>
+                    </td>
+                    <td class="everyDayTable">
+                        <div class="day13"></div>
+                        <ul>
+                            <li class="chi"></li>
+                            <li class="cheng"></li>
+                            <li class="huang"></li>
+                            <li class="lu"></li>
+                            <li class="qing"></li>
+                            <li class="lan"></li>
+                            <li class="zi"></li>
+                        </ul>
+                    </td>
+                    <td class="everyDayTable">
+                        <div class="day14"></div>
+                        <ul>
+                            <li class="chi"></li>
+                            <li class="cheng"></li>
+                            <li class="huang"></li>
+                            <li class="lu"></li>
+                            <li class="qing"></li>
+                            <li class="lan"></li>
+                            <li class="zi"></li>
+                        </ul>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="everyDayTable">
+                    <div class="day15"></div>
+                    <ul>
+                        <li class="chi"></li>
+                        <li class="cheng"></li>
+                        <li class="huang"></li>
+                        <li class="lu"></li>
+                        <li class="qing"></li>
+                        <li class="lan"></li>
+                        <li class="zi"></li>
+                    </ul>
+                </td>
+                <td class="everyDayTable">
+                    <div class="day16"></div>
+                    <ul>
+                        <li class="chi"></li>
+                        <li class="cheng"></li>
+                        <li class="huang"></li>
+                        <li class="lu"></li>
+                        <li class="qing"></li>
+                        <li class="lan"></li>
+                        <li class="zi"></li>
+                    </ul>
+                </td>
+                <td class="everyDayTable">
+                    <div class="day17"></div>
+                    <ul>
+                        <li class="chi"></li>
+                        <li class="cheng"></li>
+                        <li class="huang"></li>
+                        <li class="lu"></li>
+                        <li class="qing"></li>
+                        <li class="lan"></li>
+                        <li class="zi"></li>
+                    </ul>
+                </td>
+                <td class="everyDayTable">
+                    <div class="day18"></div>
+                    <ul>
+                        <li class="chi"></li>
+                        <li class="cheng"></li>
+                        <li class="huang"></li>
+                        <li class="lu"></li>
+                        <li class="qing"></li>
+                        <li class="lan"></li>
+                        <li class="zi"></li>
+                    </ul>
+                </td>
+                <td class="everyDayTable">
+                    <div class="day19"></div>
+                    <ul>
+                        <li class="chi"></li>
+                        <li class="cheng"></li>
+                        <li class="huang"></li>
+                        <li class="lu"></li>
+                        <li class="qing"></li>
+                        <li class="lan"></li>
+                        <li class="zi"></li>
+                    </ul>
+                </td>
+                <td class="everyDayTable">
+                    <div class="day20"></div>
+                    <ul>
+                        <li class="chi"></li>
+                        <li class="cheng"></li>
+                        <li class="huang"></li>
+                        <li class="lu"></li>
+                        <li class="qing"></li>
+                        <li class="lan"></li>
+                        <li class="zi"></li>
+                    </ul>
+                </td>
+                <td class="everyDayTable">
+                    <div class="day21"></div>
+                    <ul>
+                        <li class="chi"></li>
+                        <li class="cheng"></li>
+                        <li class="huang"></li>
+                        <li class="lu"></li>
+                        <li class="qing"></li>
+                        <li class="lan"></li>
+                        <li class="zi"></li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="everyDayTable">
+                    <div class="day22"></div>
+                    <ul>
+                        <li class="chi"></li>
+                        <li class="cheng"></li>
+                        <li class="huang"></li>
+                        <li class="lu"></li>
+                        <li class="qing"></li>
+                        <li class="lan"></li>
+                        <li class="zi"></li>
+                    </ul>
+                </td>
+                <td class="everyDayTable">
+                    <div class="day23"></div>
+                    <ul>
+                        <li class="chi"></li>
+                        <li class="cheng"></li>
+                        <li class="huang"></li>
+                        <li class="lu"></li>
+                        <li class="qing"></li>
+                        <li class="lan"></li>
+                        <li class="zi"></li>
+                    </ul>
+                </td>
+                <td class="everyDayTable">
+                    <div class="day24"></div>
+                    <ul>
+                        <li class="chi"></li>
+                        <li class="cheng"></li>
+                        <li class="huang"></li>
+                        <li class="lu"></li>
+                        <li class="qing"></li>
+                        <li class="lan"></li>
+                        <li class="zi"></li>
+                    </ul>
+                </td>
+                <td class="everyDayTable">
+                    <div class="day25"></div>
+                    <ul>
+                        <li class="chi"></li>
+                        <li class="cheng"></li>
+                        <li class="huang"></li>
+                        <li class="lu"></li>
+                        <li class="qing"></li>
+                        <li class="lan"></li>
+                        <li class="zi"></li>
+                    </ul>
+                </td>
+                <td class="everyDayTable">
+                    <div class="day26"></div>
+                    <ul>
+                        <li class="chi"></li>
+                        <li class="cheng"></li>
+                        <li class="huang"></li>
+                        <li class="lu"></li>
+                        <li class="qing"></li>
+                        <li class="lan"></li>
+                        <li class="zi"></li>
+                    </ul>
+                </td>
+                <td class="everyDayTable">
+                    <div class="day27"></div>
+                    <ul>
+                        <li class="chi"></li>
+                        <li class="cheng"></li>
+                        <li class="huang"></li>
+                        <li class="lu"></li>
+                        <li class="qing"></li>
+                        <li class="lan"></li>
+                        <li class="zi"></li>
+                    </ul>
+                </td>
+                <td class="everyDayTable">
+                    <div class="day28"></div>
+                    <ul>
+                        <li class="chi"></li>
+                        <li class="cheng"></li>
+                        <li class="huang"></li>
+                        <li class="lu"></li>
+                        <li class="qing"></li>
+                        <li class="lan"></li>
+                        <li class="zi"></li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="everyDayTable">
+                    <div class="day29"></div>
+                    <ul>
+                        <li class="chi"></li>
+                        <li class="cheng"></li>
+                        <li class="huang"></li>
+                        <li class="lu"></li>
+                        <li class="qing"></li>
+                        <li class="lan"></li>
+                        <li class="zi"></li>
+                    </ul>
+                </td>
+                <td class="everyDayTable">
+                    <div class="day30"></div>
+                    <ul>
+                        <li class="chi"></li>
+                        <li class="cheng"></li>
+                        <li class="huang"></li>
+                        <li class="lu"></li>
+                        <li class="qing"></li>
+                        <li class="lan"></li>
+                        <li class="zi"></li>
+                    </ul>
+                </td>
+                <td class="everyDayTable">
+                    <div class="day31"></div>
+                    <ul>
+                        <li class="chi"></li>
+                        <li class="cheng"></li>
+                        <li class="huang"></li>
+                        <li class="lu"></li>
+                        <li class="qing"></li>
+                        <li class="lan"></li>
+                        <li class="zi"></li>
+                    </ul>
+                </td>
+                <td class="everyDayTable">
+                    <div class="day32"></div>
+                    <ul>
+                        <li class="chi"></li>
+                        <li class="cheng"></li>
+                        <li class="huang"></li>
+                        <li class="lu"></li>
+                        <li class="qing"></li>
+                        <li class="lan"></li>
+                        <li class="zi"></li>
+                    </ul>
+                </td>
+                <td class="everyDayTable">
+                    <div class="day33"></div>
+                    <ul>
+                        <li class="chi"></li>
+                        <li class="cheng"></li>
+                        <li class="huang"></li>
+                        <li class="lu"></li>
+                        <li class="qing"></li>
+                        <li class="lan"></li>
+                        <li class="zi"></li>
+                    </ul>
+                </td>
+                <td class="everyDayTable">
+                    <div class="day34"></div>
+                    <ul>
+                        <li class="chi"></li>
+                        <li class="cheng"></li>
+                        <li class="huang"></li>
+                        <li class="lu"></li>
+                        <li class="qing"></li>
+                        <li class="lan"></li>
+                        <li class="zi"></li>
+                    </ul>
+                </td>
+                <td class="everyDayTable">
+                    <div class="day35"></div>
+                    <ul>
+                        <li class="chi"></li>
+                        <li class="cheng"></li>
+                        <li class="huang"></li>
+                        <li class="lu"></li>
+                        <li class="qing"></li>
+                        <li class="lan"></li>
+                        <li class="zi"></li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- MarkDown的id标志 -->
+<div id="my-editormd">
+    <!-- 书写与实时显示的textarea -->
+    <textarea id="my-editormd-markdown-doc" name="my-editormd-markdown-doc" style="display:none;"></textarea>
+    <!-- 用于后端获取md稳当内容，Java中：request.getParameter("my-editormd-html-code")。  -->
+    <textarea id="my-editormd-html-code" name="my-editormd-html-code" style="display:none;"></textarea>
+</div>
+<div class="bodyRight">
+    <ul class="userHeadImageUl">
+        <div class="userHeadImage">
+            <img src="pic/userHeadImage.jpg" alt="头像" style="width: 100%;height: 100%;border-radius:50px;" >
+            陌上文颜
+        </div>
+        <li class="loginInfoMenu">
+            <p class="bg-green-bright on1"><img src="pic/myInfo16white.png" alt="">个人信息</p>
+            <p class="bg-yellow-bright on2"><img src="pic/setting16white.png" alt="">信息设置</p>
+            <p class="bg-orange-bright on3"><img src="pic/help16white.png" alt="">帮助</p>
+            <p class="bg-red-bright on4"><img src="pic/out16white.png" alt="">退出</p>
+        </li>
+    </ul>
+    <ul class="RightUl">
+        <li class="menuList-long">
+            <img src="pic/menuAdd16.png" alt="">
+            长期规划
+        </li>
+        <li class="menuList-now">
+            <img src="pic/menuOpen16.png" alt="">
+            即时记录
+        </li>
+        <li class="menuList-afflatus">
+            <img src="pic/menuAfflatus16.png" alt="">
+            灵感闪现
+        </li>
+    </ul>
+    <ul class="noteListUl">
+        <li class="noteList">
+            Note_01--2019年8月1日
+        </li>
+        <li class="noteList">
+            Note_02--2019年8月1日
+        </li>
+    </ul>
+    <div class="memoImage">
+        <div class="memoText">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        </div>
+    </div>
+</div>
+</body>
+</html>
