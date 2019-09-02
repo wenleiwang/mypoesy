@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mybatis://39.108.141.221:3306/poesy?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=GMT
+    name: db
+    password: 123456
