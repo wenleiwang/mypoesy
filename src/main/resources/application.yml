@@ -1,8 +1,25 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mybatis://39.108.141.221:3306/poesy?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=GMT
-    name: db
-    password: 123456
+    url: jdbc:mysql://39.108.141.221:3306/poesy??useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT+8
+    name: root
+    password: hsb2_CJJ
+    type: com.alibaba.druid.pool.DruidDataSource
+  #静态文件映射
   resources:
     static-locations: classpath:/templates/,classpath:/static/
+  #解决中文乱码
+  http:
+    encoding:
+      charset: utf-8
+      force: true
+      enabled: true
+  thymeleaf:
+    cache: false
+server:
+  tomcat:
+    uri-encoding: UTF-8
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
