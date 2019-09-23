@@ -1,10 +1,10 @@
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://39.108.141.221:3306/poesy??useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT+8
-    name: root
-    password: hsb2_CJJ
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://39.108.141.221:3306/poesy?characterEncoding=utf8&useSSL=true
+    name: 'db'
     type: com.alibaba.druid.pool.DruidDataSource
+    password: '123456'
   #静态文件映射
   resources:
     static-locations: classpath:/templates/,classpath:/static/
