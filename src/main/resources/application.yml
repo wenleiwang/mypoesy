@@ -1,10 +1,11 @@
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://39.108.141.221:3306/poesy?characterEncoding=utf8&useSSL=true
-    name: 'db'
+    url: jdbc:mysql://39.108.141.221:3306/poesy?useUnicode=true&characterEncoding=gbk&zeroDateTimeBehavior=convertToNull
+    username: db
+    password: 123456
+    initialization-mode: always
     type: com.alibaba.druid.pool.DruidDataSource
-    password: '123456'
   #静态文件映射
   resources:
     static-locations: classpath:/templates/,classpath:/static/
@@ -21,5 +22,3 @@ server:
     uri-encoding: UTF-8
 mybatis:
   mapper-locations: classpath:mybatis/mapper/*.xml
-  configuration:
-    map-underscore-to-camel-case: true

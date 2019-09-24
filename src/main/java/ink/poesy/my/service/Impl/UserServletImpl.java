@@ -16,18 +16,23 @@ public class UserServletImpl implements UserServlet {
     @Autowired
     private UserMapper userMapper;
 
-    public User getUserInfo(String userName, String userPassword){
+    public List<User> getUserInfo(String userName, String userPassword){
         List<User> list = null;
         User user =null;
         //list = userMapper.userLogin(userName, userPassword);
-        user = userMapper.selectLibrarian();
+        list = userMapper.selectLibrarian();
         LOGGER.debug("list",user);
         //list.get(0);
-        return user;
+        return list;
     }
 
+    @Override
     public User selectLibrarian() {
-        return userMapper.selectLibrarian();
+        return null;
     }
+
+    // public User selectLibrarian() {
+        //return userMapper.selectLibrarian();
+ //   }
 
 }

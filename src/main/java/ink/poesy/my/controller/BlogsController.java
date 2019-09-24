@@ -21,7 +21,7 @@ public class BlogsController {
     public String goBlogsIndex(){
         String userName = "wenlei";
         String userPassword = "123456";
-        User user = userServlet.getUserInfo(userName,userPassword);
+        User user = userServlet.getUserInfo(userName,userPassword).get(0);
         System.out.println(user);
         return "blogs/index";
     }
