@@ -9,5 +9,4 @@ import java.util.List;
 public interface UserMapper {
     List<User> userLogin(String userName, String userPassword);
 
-    List<User> selectLibrarian();
 }

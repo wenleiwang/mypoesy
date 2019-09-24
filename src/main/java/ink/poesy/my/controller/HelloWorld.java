@@ -17,8 +17,8 @@ public class HelloWorld {
     UserServlet librarianService;
 
     @GetMapping("/hello")
-    public User getALibrarianInfo() {
-        return librarianService.selectLibrarian();
+    public String getALibrarianInfo() {
+        return "wo";
     }
 
     public class wo{

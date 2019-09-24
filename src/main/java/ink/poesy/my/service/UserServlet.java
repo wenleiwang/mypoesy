@@ -6,7 +6,6 @@ import java.util.List;
 
 
 public interface UserServlet {
-    public List<User> getUserInfo(String userName, String userPassword);
+    public User getUserInfo(String userName, String userPassword);
 
-    public User selectLibrarian();
 }
