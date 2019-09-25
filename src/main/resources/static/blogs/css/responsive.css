@@ -108,6 +108,7 @@
 	}
 	.sidebar-testimonial .carousel-item .item-img > span {
 		line-height: 100px;
+		border-radius: 50px ;
 	}
 	.carousel.carousel-slider .carousel-item h2 {
 		font-size: 18px;

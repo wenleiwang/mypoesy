@@ -121,6 +121,8 @@ img {
 
 .mr-0 { margin-right: 0px; }
 .ml-0 { margin-left: 0px; }
+
+.mt-20 { margin-top: 20px;}
 /* - Padding Margin Setting - End
 ================================================== */
 
@@ -235,6 +237,10 @@ a {
 .w100dt {
   width: 100%;
   display: table;
+}
+
+.single-blog-section{
+  margin-top: 100px;
 }
 
 /* - 2. Global Area End
@@ -999,7 +1005,9 @@ ul.pagination li:hover a {
   font-size: 42px;
   font-weight: 700;
   line-height: 120px;
+  border-radius: 100%;
 }
+
 .sidebar-testimonial .carousel-item > h2 {
   font-size: 24px;
   font-weight: 700;

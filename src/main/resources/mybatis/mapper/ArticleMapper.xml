@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ink.poesy.my.mapper.ArticleMapper">
+
+    <!--查询所有文章的展示列表-->
+    <select id="selectAllShowArticle" resultType="ink.poesy.my.pojo.ArticleShow">
+        SELECT articleId,name,classifyName,articleTitle,articleImg,articleAbstract,articleLike,articleComment,articleLook,articleTime,labelId FROM article LEFT JOIN `user` ON article.userId = user.userId LEFT JOIN `classify` ON article.classifyId = classify.classifyId
+    </select>
+
+    <!--查询最新发表文章的前9条展示列表-->
+    <select id="selectNewShowArticle" resultType="ink.poesy.my.pojo.ArticleShow">
+        SELECT articleId,name,img,classifyName,articleTitle,articleComment,labelId FROM article LEFT JOIN `user` ON article.userId = user.userId LEFT JOIN `classify` ON article.classifyId = classify.classifyId ORDER BY `articleTime` DESC LIMIT 0,9
+    </select>
+</mapper>
