@@ -79,7 +79,6 @@ ul {
 li {
   margin: 0;
   padding: 0;
-  float: left;
 }
 i {
   display: inline-block !important;
@@ -1036,6 +1035,7 @@ ul.pagination li:hover a {
   text-align: center;
   position: relative;
   background-color: #fff;
+  float: left;
 }
 .sidebar-followme ul.followme-links li a {
   width: 100%;

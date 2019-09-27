@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>mkToHtmlDemo</title>
+
+    <link rel="stylesheet" type="text/css" href="/drip/css/editormd.css">
+    <link rel="stylesheet" href="/drip/css/editormd.preview.css" />
+    <link rel="stylesheet" href="/drip/lib/google-code-prettify/prettify.css">
+    <link rel="stylesheet" href="/drip/lib/google-code-prettify/skins/atelier-lakeside-light.css">
+    <!--引入js文件-->
+    <script src="/drip/js/jquery.min.js"></script>
+    <script src="/drip/lib/marked.min.js"></script>
+    <script src="/drip/lib/prettify.min.js"></script>
+    <script src="/drip/lib/raphael.min.js"></script>
+    <script src="/drip/lib/underscore.min.js"></script>
+    <script src="/drip/lib/sequence-diagram.min.js"></script>
+    <script src="/drip/lib/flowchart.min.js"></script>
+    <script src="/drip/lib/jquery.flowchart.min.js"></script>
+    <script src="/drip/js/editormd.js"></script>
+    <!--js开始-->
+    <script type="text/javascript" th:inline="javascript">
+
+        $(document).ready(
+
+            function mdToHml(){
+                //先对容器初始化，在需要展示的容器中创建textarea隐藏标签，
+                $("#articleContent").html('<textarea id="appendTest" style="display:none;" class="w100dt mb-10"></textarea>');
+                $("#appendTest").val([[${CONTENT}]]);//将需要转换的内容加到转换后展示容器的textarea隐藏标签中
+
+                //转换开始,第一个参数是上面的div的id
+                editormd.markdownToHTML("articleContent", {
+                    htmlDecode: "style,script,iframe", //可以过滤标签解码
+                    emoji: true,
+                    taskList:true,
+                    tex: true,               // 默认不解析
+                    flowChart:true,         // 默认不解析
+                    sequenceDiagram:true  // 默认不解析
+                });
+            });
+    </script>
+    <!--js结束-->
+</head>
+
+<body>
+<!--文章-->
+<p id="articleContent"></p>
+<!--文章结束-->
+
+
+
+</body>
+</html>

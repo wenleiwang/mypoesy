@@ -1,6 +1,5 @@
 package ink.poesy.my.mapper;
 
-import ink.poesy.my.pojo.Article;
 import ink.poesy.my.pojo.ArticleShow;
 
 import java.util.List;
@@ -13,4 +12,6 @@ public interface ArticleMapper {
     public List<ArticleShow> selectAllShowArticle();
 
     List<ArticleShow> selectNewShowArticle();
+
+    String getArticleForId(int articleId);
 }

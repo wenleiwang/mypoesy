@@ -47,4 +47,17 @@ public class ArticleServletImpl implements ArticleServlet {
         }
         return articleList;
     }
+
+    @Override
+    public String getArticleForId(int articleId) {
+        String context = articleMapper.getArticleForId(articleId);
+        if(null != context || !context.equals("")){
+            LOGGER.info("文章内容获取成功！");
+            LOGGER.info("content:"+context);
+            return context;
+        }else{
+            LOGGER.error("文章内容获取失败！");
+            return null;
+        }
+    }
 }

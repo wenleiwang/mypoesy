@@ -17,6 +17,11 @@ spring:
       enabled: true
   thymeleaf:
     cache: false
+#Spring Boot工程嵌入的tomcat限制了请求的文件大小
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
 server:
   tomcat:
     uri-encoding: UTF-8

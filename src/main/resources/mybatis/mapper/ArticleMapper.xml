@@ -11,4 +11,9 @@
     <select id="selectNewShowArticle" resultType="ink.poesy.my.pojo.ArticleShow">
         SELECT articleId,name,img,classifyName,articleTitle,articleComment,labelId FROM article LEFT JOIN `user` ON article.userId = user.userId LEFT JOIN `classify` ON article.classifyId = classify.classifyId ORDER BY `articleTime` DESC LIMIT 0,9
     </select>
+
+<!--    通过文章id获取文章内容-->
+    <select id="getArticleForId" resultType="string">
+        select article.articleContent FROM `article` WHERE article.articleId = #{articleId} limit 0,1
+    </select>
 </mapper>

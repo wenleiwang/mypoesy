@@ -15,4 +15,9 @@ public class DripController {
     public String goIndex(){
         return "dripindex";
     }
+
+    @RequestMapping("/test.html")
+    public String goTest(){
+        return "drip/test.html";
+    }
 }
