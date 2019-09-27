@@ -167,6 +167,7 @@ a.sm-name {
 ul.post-mate {}
 ul.post-mate li {
   margin-left: 10px;
+  float:left;
 }
 ul.post-mate li a {
   color: #5e5e5e !important;
@@ -180,6 +181,7 @@ ul.post-mate li a:hover {
 ul.post-mate-time {}
 ul.post-mate-time li {
   margin-right: 15px;
+  float:left;
 }
 /* post-mate End
 ================================================== */
